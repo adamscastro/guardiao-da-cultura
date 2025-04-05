@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=3 uid="uid://cncdyy0d08i0v"]
+
+[ext_resource type="Script" uid="uid://bs4tb8rlswmu8" path="res://Scenes/Character/Habilidades/Iara.gd" id="1_xrc0l"]
+[ext_resource type="Texture2D" uid="uid://cy6yswrq6rji6" path="res://Assets/Effects/agua.png" id="2_ioyqg"]
+[ext_resource type="Texture2D" uid="uid://cmgpi3h41vg0n" path="res://Assets/Effects/466.png" id="5_jvu6p"]
+
+[sub_resource type="Animation" id="Animation_n77v5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EfeitoVisual:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EfeitoAgua:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [22]
+}
+
+[sub_resource type="Animation" id="Animation_tuv0k"]
+resource_name = "iara_efeito"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EfeitoVisual:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05078, 0.10156, 0.150177, 0.201497, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 6, 5, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_us3j6"]
+resource_name = "iara_efeito_agua"
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EfeitoAgua:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jvu6p"]
+_data = {
+&"RESET": SubResource("Animation_n77v5"),
+&"iara_efeito": SubResource("Animation_tuv0k"),
+&"iara_efeito_agua": SubResource("Animation_us3j6")
+}
+
+[node name="Iara" type="Node2D"]
+script = ExtResource("1_xrc0l")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="EfeitoVisual" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.533333)
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ioyqg")
+hframes = 5
+vframes = 3
+
+[node name="EfeitoAgua" type="Sprite2D" parent="."]
+modulate = Color(0.54902, 0.854902, 0.913725, 0.596078)
+texture_filter = 1
+texture = ExtResource("5_jvu6p")
+hframes = 11
+vframes = 9
+frame = 22
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jvu6p")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

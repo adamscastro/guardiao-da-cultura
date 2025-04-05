@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm3d2usmxqiid"]
+
+[ext_resource type="Script" uid="uid://bhdvtshm4lt3b" path="res://Scenes/Character/Habilidades/Anhanga.gd" id="1_utf6p"]
+
+[node name="Anhanga" type="Node2D"]
+script = ExtResource("1_utf6p")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

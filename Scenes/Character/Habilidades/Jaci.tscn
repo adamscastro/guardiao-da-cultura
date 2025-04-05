@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxlmuo11ipjsp"]
+
+[ext_resource type="Script" uid="uid://bsucjqm5f2vkv" path="res://Scenes/Character/Habilidades/Jaci.gd" id="1_yah7r"]
+[ext_resource type="Texture2D" uid="uid://dj4d3mo83c6b7" path="res://Assets/Effects/Smoke Simple 2.png" id="2_gorll"]
+
+[sub_resource type="Animation" id="Animation_7011v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Efeito:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Efeito:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.231373, 0.152941, 0.443137, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_eeiyv"]
+resource_name = "efeito_jaci"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Efeito:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.00286015, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Efeito:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.231373, 0.152941, 0.443137, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpbvm"]
+_data = {
+&"RESET": SubResource("Animation_7011v"),
+&"efeito_jaci": SubResource("Animation_eeiyv")
+}
+
+[node name="Jaci" type="Node2D"]
+script = ExtResource("1_yah7r")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Efeito" type="Sprite2D" parent="."]
+modulate = Color(0.231373, 0.152941, 0.443137, 1)
+texture_filter = 1
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_gorll")
+hframes = 5
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jpbvm")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

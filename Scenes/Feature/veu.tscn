@@ -1,0 +1,110 @@
+[gd_scene load_steps=6 format=3 uid="uid://buqoc2igl3hwo"]
+
+[ext_resource type="Script" uid="uid://cg1bo0f54bi78" path="res://Scenes/Map/AncientRuins/nevoa.gd" id="1_8o05f"]
+
+[sub_resource type="Animation" id="Animation_st7ec"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rf3ab"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y53nw"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u6uoh"]
+_data = {
+&"RESET": SubResource("Animation_st7ec"),
+&"fade_in": SubResource("Animation_rf3ab"),
+&"fade_out": SubResource("Animation_y53nw")
+}
+
+[node name="Véu" type="Node2D"]
+script = ExtResource("1_8o05f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -591.0
+offset_top = -352.0
+offset_right = 557.0
+offset_bottom = 416.0
+color = Color(0.313726, 0, 0.392157, 0.537255)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(7.62939e-05, 0.000183105)
+scale = Vector2(100, 100)
+amount = 500
+lifetime = 5.0
+speed_scale = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+scale_amount_max = 2.0
+color = Color(0.501961, 0, 1, 0.741176)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+position = Vector2(7.62939e-05, 0.000183105)
+scale = Vector2(100, 100)
+amount = 500
+lifetime = 5.0
+speed_scale = 0.2
+emission_shape = 3
+emission_rect_extents = Vector2(1, 1)
+direction = Vector2(0, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 4.0
+scale_amount_max = 2.0
+color = Color(0.227343, 0.000643653, 0.479648, 0.898039)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_u6uoh")
+}
+
+[node name="TimerNevoa" type="Timer" parent="."]
+
+[node name="TimerCooldown" type="Timer" parent="."]

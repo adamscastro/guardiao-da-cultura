@@ -1,0 +1,34 @@
+# Godot-specific ignores
+.import/
+*.import
+
+# Godot 4 cache & settings
+.godot/
+*.godot/
+*.tmp
+*.log
+*.vulkan.cache
+*.cfg
+*.uid
+
+# Sistema operacional (Windows/Linux/macOS)
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Builds
+/build/
+bin/
+android/
+export/
+
+# Backups
+*.bak
+*.old
+*.orig
