@@ -4,36 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cek0r8j74lre2" path="res://Assets/Character/Elias/personagem_principal.png" id="2_isa4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syf7y"]
-size = Vector2(14, 7)
-
-[sub_resource type="Animation" id="Animation_dd465"]
-resource_name = "andar_baixo"
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
+size = Vector2(18, 7.5)
 
 [sub_resource type="Animation" id="Animation_lhvu3"]
 length = 0.001
@@ -62,8 +33,8 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_4sjlk"]
-resource_name = "andar_baixo_diagonal_esquerda"
+[sub_resource type="Animation" id="Animation_dd465"]
+resource_name = "andar_baixo"
 length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
@@ -76,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [3, 4, 5]
+"values": [0, 1, 2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -120,8 +91,8 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_6ct3r"]
-resource_name = "andar_esquerda"
+[sub_resource type="Animation" id="Animation_4sjlk"]
+resource_name = "andar_baixo_diagonal_esquerda"
 length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
@@ -134,7 +105,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [6, 7, 8]
+"values": [3, 4, 5]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -149,8 +120,8 @@ tracks/1/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_1kp85"]
-resource_name = "andar_direito"
+[sub_resource type="Animation" id="Animation_k85er"]
+resource_name = "andar_cima"
 length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
@@ -163,36 +134,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [6, 7, 8]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_qnedo"]
-resource_name = "andar_cima_diagonal_esquerda"
-length = 0.3
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [9, 10, 11]
+"values": [12, 13, 14]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -236,8 +178,8 @@ tracks/1/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_k85er"]
-resource_name = "andar_cima"
+[sub_resource type="Animation" id="Animation_qnedo"]
+resource_name = "andar_cima_diagonal_esquerda"
 length = 0.3
 loop_mode = 1
 tracks/0/type = "value"
@@ -250,7 +192,65 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [12, 13, 14]
+"values": [9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_1kp85"]
+resource_name = "andar_direito"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_6ct3r"]
+resource_name = "andar_esquerda"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 8]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -529,7 +529,7 @@ vframes = 5
 region_rect = Rect2(-18.3387, -6.79287, 130.734, 340.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 17.5)
+position = Vector2(0, 15.75)
 shape = SubResource("RectangleShape2D_syf7y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
