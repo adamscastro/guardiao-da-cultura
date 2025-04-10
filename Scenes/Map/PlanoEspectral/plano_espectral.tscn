@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://sbg7ihnv532l"]
+[gd_scene load_steps=80 format=4 uid="uid://sbg7ihnv532l"]
 
 [ext_resource type="PackedScene" uid="uid://btl1u5set6qsk" path="res://Scenes/Character/character.tscn" id="2_6a4wv"]
 [ext_resource type="Texture2D" uid="uid://2xnmqyboicvu" path="res://Assets/Map/PlanoEspectral/ÁrvoreCentral.png" id="2_tfrmh"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://d0yk2hfylhrql" path="res://Assets/Map/PlanoEspectral/grama_pedra.png" id="24_edvsx"]
 [ext_resource type="PackedScene" uid="uid://cd0yvg5akgnbp" path="res://Scenes/Relics/fio.tscn" id="25_edvsx"]
 [ext_resource type="PackedScene" uid="uid://8tg8d2q7i1uh" path="res://Scenes/Relics/carapuca.tscn" id="26_8o236"]
+[ext_resource type="PackedScene" uid="uid://dpwi3o73kxayd" path="res://Scenes/Character/caipora.tscn" id="27_3wyvr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lxov5"]
 texture = ExtResource("13_u4avg")
@@ -12556,3 +12557,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Carapuca" parent="Relics" instance=ExtResource("26_8o236")]
 position = Vector2(-24, 0)
 scale = Vector2(0.3, 0.3)
+
+[node name="Caipora" parent="." instance=ExtResource("27_3wyvr")]
+position = Vector2(56, 144)
+scale = Vector2(0.6, 0.6)

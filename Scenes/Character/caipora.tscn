@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpwi3o73kxayd"]
+
+[ext_resource type="Texture2D" uid="uid://cy4vv4dj21bfj" path="res://Assets/Character/Caipora/caipora.png" id="1_kg20t"]
+
+[node name="Caipora" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_kg20t")
+hframes = 16
+vframes = 6
