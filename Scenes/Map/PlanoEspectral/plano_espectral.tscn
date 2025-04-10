@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://sbg7ihnv532l"]
+[gd_scene load_steps=79 format=4 uid="uid://sbg7ihnv532l"]
 
 [ext_resource type="PackedScene" uid="uid://btl1u5set6qsk" path="res://Scenes/Character/character.tscn" id="2_6a4wv"]
 [ext_resource type="Texture2D" uid="uid://2xnmqyboicvu" path="res://Assets/Map/PlanoEspectral/ÁrvoreCentral.png" id="2_tfrmh"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://bxqbli05i066l" path="res://Assets/Map/PlanoEspectral/plano-espectral.png" id="24_8o236"]
 [ext_resource type="Texture2D" uid="uid://dab15tllylm5t" path="res://Assets/Map/PlanoEspectral/grama_variacao.png" id="24_47xg7"]
 [ext_resource type="Texture2D" uid="uid://d0yk2hfylhrql" path="res://Assets/Map/PlanoEspectral/grama_pedra.png" id="24_edvsx"]
+[ext_resource type="PackedScene" uid="uid://cd0yvg5akgnbp" path="res://Scenes/Relics/fio.tscn" id="25_edvsx"]
+[ext_resource type="PackedScene" uid="uid://8tg8d2q7i1uh" path="res://Scenes/Relics/carapuca.tscn" id="26_8o236"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lxov5"]
 texture = ExtResource("13_u4avg")
@@ -12545,3 +12547,12 @@ y_sort_enabled = true
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD//wgAAAATAAIAAAARAP7/AAATAAIAAAA=")
 tile_set = SubResource("TileSet_y45vj")
+
+[node name="Relics" type="Node2D" parent="."]
+
+[node name="Fio" parent="Relics" instance=ExtResource("25_edvsx")]
+scale = Vector2(0.5, 0.5)
+
+[node name="Carapuca" parent="Relics" instance=ExtResource("26_8o236")]
+position = Vector2(-24, 0)
+scale = Vector2(0.3, 0.3)
