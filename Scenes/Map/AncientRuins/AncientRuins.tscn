@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=4 uid="uid://tyks3mdo6oxl"]
 
 [ext_resource type="Texture2D" uid="uid://b7chtc8a8ywco" path="res://Assets/Map/AncientRuins/Ancient Ruins.png" id="1_k6ugx"]
-[ext_resource type="PackedScene" uid="uid://btl1u5set6qsk" path="res://Scenes/Character/character.tscn" id="2_xnhsa"]
+[ext_resource type="PackedScene" uid="uid://btl1u5set6qsk" path="res://Scenes/Character/Aruan/character.tscn" id="2_xnhsa"]
 [ext_resource type="Shader" uid="uid://btm26y382iu2f" path="res://Scenes/Map/AncientRuins/AncientRuins.gdshader" id="3_vinqo"]
 [ext_resource type="Texture2D" uid="uid://da4x1tlfokoel" path="res://Assets/Map/AncientRuins/Ancient Ruins - Tilesets.png" id="4_e7t84"]
 [ext_resource type="PackedScene" uid="uid://buqoc2igl3hwo" path="res://Scenes/Feature/veu.tscn" id="6_k6ugx"]

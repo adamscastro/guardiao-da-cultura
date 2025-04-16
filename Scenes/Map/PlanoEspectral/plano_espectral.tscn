@@ -1,6 +1,6 @@
 [gd_scene load_steps=80 format=4 uid="uid://sbg7ihnv532l"]
 
-[ext_resource type="PackedScene" uid="uid://btl1u5set6qsk" path="res://Scenes/Character/character.tscn" id="2_6a4wv"]
+[ext_resource type="PackedScene" uid="uid://btl1u5set6qsk" path="res://Scenes/Character/Aruan/character.tscn" id="2_6a4wv"]
 [ext_resource type="Texture2D" uid="uid://2xnmqyboicvu" path="res://Assets/Map/PlanoEspectral/ÁrvoreCentral.png" id="2_tfrmh"]
 [ext_resource type="Texture2D" uid="uid://ddlsw2ijfhm1m" path="res://Assets/Map/PlanoEspectral/Árvore Média Espectral.png" id="2_yj1gy"]
 [ext_resource type="Texture2D" uid="uid://b16buuxndm7x1" path="res://Assets/Map/PlanoEspectral/grama_magica.png" id="3_47xg7"]

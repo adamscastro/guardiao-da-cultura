@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://btl1u5set6qsk"]
 
-[ext_resource type="Script" uid="uid://i1xkhhbe7jkq" path="res://Scenes/Character/character.gd" id="1_fep23"]
-[ext_resource type="Texture2D" uid="uid://cek0r8j74lre2" path="res://Assets/Character/Elias/personagem_principal.png" id="2_isa4f"]
+[ext_resource type="Script" uid="uid://i1xkhhbe7jkq" path="res://Scenes/Character/Aruan/character.gd" id="1_fep23"]
+[ext_resource type="Texture2D" uid="uid://cek0r8j74lre2" path="res://Assets/Character/Aruan/personagem_principal.png" id="2_isa4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syf7y"]
 size = Vector2(18, 7.5)

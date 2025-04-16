@@ -11,13 +11,18 @@ config_version=5
 [application]
 
 config/name="guardiao_da_cultura"
-run/main_scene="res://Scenes/Character/character.tscn"
+run/main_scene="res://Scenes/Character/Aruan/character.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
 PlayerData="*res://Scripts/PlayerData.gd"
 BlessingManager="*res://Scripts/BlessingManager.gd"
+
+[display]
+
+window/size/window_width_override=1280
+window/size/window_height_override=720
 
 [input]
 
