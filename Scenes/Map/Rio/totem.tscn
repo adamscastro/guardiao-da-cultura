@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1w2k1urxx8k7"]
+
+[ext_resource type="Script" uid="uid://da6towao7dqxg" path="res://Scenes/Map/Rio/totem.gd" id="1_oayl2"]
+[ext_resource type="Texture2D" uid="uid://c2nyddvdfraj5" path="res://Assets/Map/Rio/Totem.png" id="2_f0r4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4bok"]
+size = Vector2(236, 465)
+
+[node name="Totem" type="Area2D"]
+script = ExtResource("1_oayl2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_f0r4n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -34.5)
+shape = SubResource("RectangleShape2D_c4bok")

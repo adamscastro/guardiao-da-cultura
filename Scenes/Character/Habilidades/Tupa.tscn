@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm3d2usmxqiid"]
+
+[ext_resource type="Script" uid="uid://bhdvtshm4lt3b" path="res://Scenes/Character/Habilidades/Tupa.gd" id="1_g321o"]
+
+[node name="Tupa" type="Node2D"]
+script = ExtResource("1_g321o")

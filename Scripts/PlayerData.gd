@@ -3,7 +3,7 @@ extends Node
 
 # 🌟 Bênçãos desbloqueadas (false = ainda não ativada)
 var bencaos_desbloqueadas = {
-	"Tupa": false,
+	"Tupa": true,
 	"Anhanga": true,
 	"Iara": true,
 	"Jaci": true,
@@ -23,14 +23,16 @@ var bencaos_nivel = {
 var bencao_duracoes = {
 	"Jaci": [4.0, 6.0, 8.0],
 	"Anhanga": [4.0, 6.0, 8.0],
-	"Iara": [5.0, 7.0, 9.0]
+	"Iara": [5.0, 7.0, 9.0],
+	"Tupa": [4.0, 6.0, 8.0]
 }
 
 # Cooldown por nível
 var bencao_cooldowns = {
 	"Jaci": [10.0, 6.0, 4.0],
 	"Anhanga": [12.0, 9.0, 6.0],
-	"Iara": [10.0, 7.0, 5.0]
+	"Iara": [10.0, 7.0, 5.0],
+	"Tupa": [10.0, 7.0, 5.0]
 }
 
 

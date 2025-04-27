@@ -1,10 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://btl1u5set6qsk"]
+[gd_scene load_steps=25 format=3 uid="uid://btl1u5set6qsk"]
 
 [ext_resource type="Script" uid="uid://i1xkhhbe7jkq" path="res://Scenes/Character/Aruan/character.gd" id="1_fep23"]
-[ext_resource type="Texture2D" uid="uid://cek0r8j74lre2" path="res://Assets/Character/Aruan/personagem_principal.png" id="2_isa4f"]
+[ext_resource type="Texture2D" uid="uid://bwh6sev6nqsy8" path="res://Assets/Character/Aruan/aruan_teste.png" id="2_re3sp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syf7y"]
-size = Vector2(18, 7.5)
+size = Vector2(18, 7)
 
 [sub_resource type="Animation" id="Animation_lhvu3"]
 length = 0.001
@@ -518,18 +518,32 @@ _data = {
 &"parado_esquerda": SubResource("Animation_2u5n8")
 }
 
+[sub_resource type="Gradient" id="Gradient_xnhsa"]
+offsets = PackedFloat32Array(0, 0.677885)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_re3sp"]
+gradient = SubResource("Gradient_xnhsa")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_re3sp"]
+radius = 47.0425
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_fep23")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_isa4f")
+texture = ExtResource("2_re3sp")
 hframes = 3
 vframes = 5
 region_rect = Rect2(-18.3387, -6.79287, 130.734, 340.6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 15.75)
+position = Vector2(0, 18.5)
 shape = SubResource("RectangleShape2D_syf7y")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -538,3 +552,18 @@ libraries = {
 }
 
 [node name="Habilidades" type="Node2D" parent="."]
+
+[node name="Aura" type="PointLight2D" parent="."]
+enabled = false
+color = Color(1.92523e-06, 0.846716, 0.311569, 1)
+range_z_max = 2
+texture = SubResource("GradientTexture2D_re3sp")
+texture_scale = 2.45
+
+[node name="LuzTupa" type="Area2D" parent="."]
+visible = false
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LuzTupa"]
+position = Vector2(-1, 40)
+shape = SubResource("CircleShape2D_re3sp")

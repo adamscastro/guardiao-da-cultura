@@ -97,9 +97,14 @@ func _process(delta):
 		BlessingManager.set_player(self)
 		BlessingManager.ativar_bencao("Jaci")
 		
-	if Input.is_action_just_pressed("ativar_anhanga"):  # Tecla A
+	if Input.is_action_just_pressed("ativar_tupa"):  # Tecla que você definiu no InputMap
 		BlessingManager.set_player(self)
-		BlessingManager.ativar_bencao("Anhanga")
+		# Se já está ativa, desativa; senão, ativa
+		if "Tupa" in BlessingManager.bencaos_ativas:
+			BlessingManager.desativar_bencao("Tupa")
+		else:
+			BlessingManager.ativar_bencao("Tupa")
+
 
 	if Input.is_action_just_pressed("ativar_iara"):  # Tecla I
 		BlessingManager.set_player(self)

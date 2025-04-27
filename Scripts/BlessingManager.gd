@@ -6,9 +6,8 @@ var player: Node = null
 # 🗺️ Mapeamento das cenas das bênçãos
 var bencao_scenes = {
 	"Jaci": preload("res://Scenes/Character/Habilidades/Jaci.tscn"),
-	"Anhanga": preload("res://Scenes/Character/Habilidades/Anhanga.tscn"),
+	"Tupa": preload("res://Scenes/Character/Habilidades/Tupa.tscn"),
 	"Iara": preload("res://Scenes/Character/Habilidades/Iara.tscn")
-	
 }
 
 # 🧠 Instâncias ativas das habilidades
@@ -23,10 +22,11 @@ func set_player(p):
 
 # 🔁 Ativa uma bênção se estiver desbloqueada e fora do cooldown
 func ativar_bencao(nome: String) -> void:
-	# Verifica cooldown
-	if cooldowns.has(nome) and cooldowns[nome] > 0:
-		print("Aguardando cooldown:", nome)
-		return
+	# Para Tupa: ignora o cooldown
+	if nome != "Tupa":
+		if cooldowns.has(nome) and cooldowns[nome] > 0:
+			print("Aguardando cooldown:", nome)
+			return
 
 	# Verifica se está desbloqueada
 	if not PlayerData.tem_bencao(nome):
@@ -65,6 +65,10 @@ func desativar_todas() -> void:
 
 # ⏳ Iniciar cooldown de uma bênção
 func iniciar_cooldown(nome: String) -> void:
+	# Para Tupa: não iniciar cooldown
+	if nome == "Tupa":
+		return
+
 	var nivel = PlayerData.get_nivel_bencao(nome)
 	var lista = PlayerData.bencao_cooldowns.get(nome, [5.0])
 	var tempo = lista[min(nivel, lista.size() - 1)]
