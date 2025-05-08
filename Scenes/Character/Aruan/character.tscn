@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://btl1u5set6qsk"]
 
 [ext_resource type="Script" uid="uid://i1xkhhbe7jkq" path="res://Scenes/Character/Aruan/character.gd" id="1_fep23"]
-[ext_resource type="Texture2D" uid="uid://bwh6sev6nqsy8" path="res://Assets/Character/Aruan/aruan_teste.png" id="2_re3sp"]
+[ext_resource type="Texture2D" uid="uid://baojdcvwgu0s7" path="res://Assets/Character/Aruan/aruan_novo.png" id="2_re3sp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syf7y"]
 size = Vector2(18, 7)
@@ -550,6 +550,7 @@ shape = SubResource("RectangleShape2D_syf7y")
 libraries = {
 &"": SubResource("AnimationLibrary_73nau")
 }
+speed_scale = 0.75
 
 [node name="Habilidades" type="Node2D" parent="."]
 
